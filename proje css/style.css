@@ -1,3 +1,11 @@
 *{
     box-sizing: border-box;
 }
+
+img.rounded-circle {
+  border: 3px solid white;
+}
+
+.custom-header {
+    background-color: #ec9cc4;
+}
