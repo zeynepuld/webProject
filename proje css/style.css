@@ -48,9 +48,21 @@
   color: white !important;
 }
 
+.hakkimdaClass {
+  background-color:mistyrose;
+  padding: 4%;
+  color: #780e3c;
+  font-size: 105%;
+  box-shadow: 0 4px 12px rgba(177, 175, 176, 0.3);
+  border: 3px solid #53032e;
+  box-shadow: 0 4px 10px rgba(255, 185, 220, 0.951);
+  border-radius: 15px;
+  font-family: cursive;
+}
 
 .feature-box {
   background-color: #fdf0f5;
+  border: 3px solid #53032e;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -166,27 +178,7 @@
   height: 400px;
 }
 
-/*
-.text-pink {
-  color: #ff69b4;
-}
 
-.border-pink {
-  border-color: #ff69b4 !important;
-}
-*/
-
-.hakkimdaClass {
-  background-color: #fdf0f5;
-  padding: 4%;
-  color: #780e3c;
-  font-size: 105%;
-  box-shadow: 0 4px 12px rgba(177, 175, 176, 0.3);
-  border: 3px solid #53032e;
-  box-shadow: 0 4px 10px rgba(255, 185, 220, 0.951);
-  border-radius: 15px;
-  font-family: cursive;
-}
 
 #kisiselCard {
   font-size: 115%;
@@ -203,3 +195,44 @@
 #basarilarimCard {
   font-size: 115%;
 }
+
+
+
+/* hakkımda hobiler kısmı */
+
+.hobilerClass {
+  color: #53032e;
+  font-family: cursive;
+}
+
+.features .box {
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.features .box::before {
+    content: attr(data-work);
+    position: absolute;
+    background-color: #e42424a7;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+    font-size: 1.5rem;
+    transform: translateX(calc(-100% - 5px));
+}
+
+.features .box:hover::before {
+    transform: translateX(0);
+}
+
+.features .box {
+    background-color: #3e0000;
+}
+
+/* hakkımda hobiler kısmı bitti */
