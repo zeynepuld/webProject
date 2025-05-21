@@ -2,32 +2,28 @@
   box-sizing: border-box;
 }
 
-img.rounded-circle {
-  border: 3px solid white;
-}
 
 .custom-header {
-  background-color: #ec9cc4;
+  background-color: #fdf0f5;
   font-family: cursive;
-  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
-  border-bottom: 4px solid #53032e;
+  box-shadow: 0 4px 10px rgba(255, 185, 220, 0.951);
+  border-bottom: 3px solid #53032e;
 }
 
 .custom-header h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #fff0f5;
-  text-shadow: 1px 1px 2px #53032e;
+  color: #53032e;
+  text-shadow: 1px 1px 2px rgba(255, 185, 220, 0.951);
 }
 
 .custom-header .lead {
   font-size: 1.3rem;
-  color: #ffe4ec;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .custom-header img {
-  border: 4px solid #53032e;
-  box-shadow: 0 0 12px rgba(255, 105, 180, 0.7);
+  border: 3px solid #53032e;
 }
 
 .card-text {
@@ -57,7 +53,7 @@ img.rounded-circle {
   background-color: #fdf0f5;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -161,4 +157,49 @@ img.rounded-circle {
 
 #arkeolojimüzesi h2 {
   color: #e91e63;
+}
+
+
+.card-img-top {
+  object-fit: cover;
+  width: 200px;
+  height: 400px;
+}
+
+/*
+.text-pink {
+  color: #ff69b4;
+}
+
+.border-pink {
+  border-color: #ff69b4 !important;
+}
+*/
+
+.hakkimdaClass {
+  background-color: #fdf0f5;
+  padding: 4%;
+  color: #780e3c;
+  font-size: 105%;
+  box-shadow: 0 4px 12px rgba(177, 175, 176, 0.3);
+  border: 3px solid #53032e;
+  box-shadow: 0 4px 10px rgba(255, 185, 220, 0.951);
+  border-radius: 15px;
+  font-family: cursive;
+}
+
+#kisiselCard {
+  font-size: 115%;
+}
+
+#egitimCard {
+  font-size: 115%;
+}
+
+#yeteneklerimCard {
+  font-size: 115%;
+}
+
+#basarilarimCard {
+  font-size: 115%;
 }

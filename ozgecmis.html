@@ -33,7 +33,7 @@
                         <a class="nav-link" href="index.html">Hakkında</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="ozgecmis.html">Özgeçmiş</a>
+                        <a class="nav-link active" href="ozgecmis.html">Öz geçmiş</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sehrim.html">Şehrim</a>
@@ -53,14 +53,15 @@
         <img src="imagess/profile.jpg" alt="Profil Fotoğrafı" class="rounded-circle shadow mb-3" width="120"
             height="120">
         <div class="container">
-            <h1>Özgeçmiş</h1>
+            <h1>Öz geçmiş</h1>
             <p class="lead">Kişisel bilgilerim, eğitimlerim, başarılarım ve gelecek hedeflerim.</p>
         </div>
     </header>
 
     <!-- hakkımda kısmı -->
     <section class="container mt-5">
-        <h3>Hakkımda</h3>
+        <div class="hakkimdaClass">
+        <h3><strong>Hakkımda</strong></h3>
         <p style="text-indent: 20px;">
             Merhaba, ben Zeynep. 20 yaşındayım. Boyum 160 kilom 52. Türkiye'nin en güzel şehri İzmit'te yaşıyorum. Bu
             sene kazandığım Sakarya Üniversitesinde bilgisayar mühendisliği bölümünde okuyorum, doğru bir karar mıydı
@@ -68,68 +69,94 @@
             ama param yok. Bir gün param olursa yurt dışını gezicem. Her şeye rağmen hayatı romantize ederek keyif
             almaya çalışıyorum.
         </p>
-        <hr>
-
-        <div class="row my-4">
-            <div>
-                <h5>Kişisel Bilgilerim</h5>
-                <ul>
-                    <li><strong>Doğum Tarihim:</strong> 06.11.2004</li>
-                    <li><strong>Memleketim:</strong> Kocaeli - İzmit</li>
-                    <li><strong>Mailim:</strong> zeyulu41@gmail.com</li>
-                    <li><strong>Telefon numaram:</strong> 0539 830 63 07</li>
-                </ul>
-            </div>
-            <hr>
-            <div class="col-md-6">
-                <h5>Eğitim Bilgilerim</h5>
-                <ul>
-                    <li><strong>Ortaokul:</strong> İzmit Evliya Çelebi Ortaokulu (2015 - 2019)</li>
-                    <li><strong>Lise:</strong> İzmit Mehmet Akif Ersoy Anadolu Lisesi (2019 - 2024)</li>
-                    <li><strong>Üniversite:</strong> Sakarya Üniversitesi (2024 - )</li>
-                </ul>
-            </div>
         </div>
-    </section>
-    
+        <br>
+        <hr><br><br>
 
-    <!-- yeteneklerim kısmı -->
-    <section class="container mt-5">
+        <!-- Kişisel Bilgilerim-->
         <div class="row text-center">
             <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow">
-                    <img src="" class="card-img-top" alt="buraya fotoğraf gelecek" />
+                <div class="feature-box" id="kisiselCard">
                     <div class="card-body">
-                        <h5 class="card-title">Yeteneklerim</h5>
-                        <ul style="list-style-type:square">
-                            <li>Yazılım Dilleri: HTML , CSS , PHP , JavaScript , Bootstrap , C++ , C#</li>
-                            <li>Yabancı Dil: İngilizce (B2) , Almanca (A2)</li>
-                            <li>Enstrüman: Akustik gitar, piyano</li>
-                            <li>Spor: Artistik buz pateni, yüzme, tenis</li>
+                        <h5 class="card-title"><i class="fas fa-user me-2 "></i>Kişisel Bilgilerim</h5>
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-calendar-day text-secondary me-2"></i><strong>Doğum
+                                    Tarihi:</strong> 06.11.2004
+                            </li>
+                            <li><i class="fas fa-map-marker-alt text-secondary me-2"></i><strong>Memleket:</strong>
+                                Kocaeli - İzmit
+                            </li>
+                            <li><i class="fas fa-envelope text-secondary me-2"></i><strong>Mail:</strong>
+                                zeyulu41@gmail.com
+                            </li>
+                            <li><i class="fas fa-phone text-secondary me-2"></i><strong>Telefon:</strong> 0539 830
+                                63 07
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
+            <!-- Eğitim Bilgilerim-->
             <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow">
-                    <img src=" " class="card-img-top" alt="buraya fotoğraf gelecek" />
+                <div class="feature-box" id="egitimCard">
                     <div class="card-body">
-                        <h5 class="card-title">Başarılarım</h5>
-                        <ul style="list-style-type:square">
-                            <li>kjlk</li>
-                            <li>d</li>
-                            <li>d</li>
+                        <h5 class="card-title"><i class="fas fa-graduation-cap"></i> Eğitim Bilgilerim
+                        </h5>
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li><strong>İlkokul:</strong> Dr. Ferdi Kocal İlkokulu (2011 - 2015)</li>
+                            <li><strong>Ortaokul:</strong> İzmit Evliya Çelebi Ortaokulu (2015 - 2019)</li>
+                            <li><strong>Lise:</strong> İzmit Mehmet Akif Ersoy Anadolu Lisesi (2019 - 2024)</li>
+                            <li><strong>Üniversite:</strong> Sakarya Üniversitesi (2024 - )</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
 
-    <!-- hedeflerim kısmı -->
-    <section class="container mt-5">
+
+        <!-- yeteneklerim kısmı -->
+        <div class="row text-center">
+            <div class="col-md-6 mb-4">
+                <div class="feature-box" id="yeteneklerimCard">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-star"></i> Yeteneklerim</h5>
+                        <hr>
+                        <ul class="text-start">
+                            <li><i class="fas fa-code me-1"></i> HTML, CSS, PHP, JavaScript, Bootstrap, C++, C#</li>
+                            <li><i class="fas fa-language me-1"></i> İngilizce (B2), Almanca (A2)</li>
+                            <li><i class="fas fa-music me-1"></i> Akustik gitar, piyano</li>
+                            <li><i class="fas fa-running me-1"></i> Artistik buz pateni, yüzme, tenis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- başarılarım kısmı -->
+            <div class="col-md-6 mb-4">
+                <div class="feature-box" id="basarilarimCard">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-trophy"></i> Başarılarım</h5>
+                        <hr>
+                        <ul class="text-start">
+                            <li><i class="fas fa-certificate me-1"></i> İngilizce Yeterlilik Sertifikası</li>
+                            <li><i class="fas fa-award me-1"></i> Kodlama yarışmasında dereceler</li>
+                            <li><i class="fas fa-medal me-1"></i> Bölgesel buz pateni başarıları</li>
+                            <li><i class="fas fa-medal me-1"></i> Bölgesel buz pateni başarıları</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <hr><br><br>
+
+
+        <!-- hedeflerim kısmı -->
+
         <h3 class="text-center mb-4">Hedeflerim</h3>
         <div class="row text-center">
 
