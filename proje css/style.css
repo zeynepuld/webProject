@@ -49,7 +49,7 @@
 }
 
 .hakkimdaClass {
-  background-color:mistyrose;
+  background-color: mistyrose;
   padding: 4%;
   color: #780e3c;
   font-size: 105%;
@@ -206,33 +206,33 @@
 }
 
 .features .box {
-    padding: 5px;
-    overflow: hidden;
-    position: relative;
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
 }
 
 .features .box::before {
-    content: attr(data-work);
-    position: absolute;
-    background-color: #e42424a7;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-    transition: 0.3s;
-    font-size: 1.5rem;
-    transform: translateX(calc(-100% - 5px));
+  content: attr(data-work);
+  position: absolute;
+  background-color: #e42424a7;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+  font-size: 1.5rem;
+  transform: translateX(calc(-100% - 5px));
 }
 
 .features .box:hover::before {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .features .box {
-    background-color: #3e0000;
+  background-color: #3e0000;
 }
 
 /* hakkımda hobiler kısmı bitti */
@@ -244,29 +244,30 @@
 #kitap-ikonu {
   color: #ff8da2;
 }
+
 #kitap-ikonu:hover {
   color: #d96b87;
 }
 
 
 .btn-pink {
-            background-color: #ff8da2;
-            color: white;
-            transition: 0.3s;
-        }
+  background-color: #ff8da2;
+  color: white;
+  transition: 0.3s;
+}
 
-        .btn-pink:hover {
-            background-color: #d96b87;
-            color: white;
-        }
+.btn-pink:hover {
+  background-color: #d96b87;
+  color: white;
+}
 
-        .btn-outline-pink {
-            color: #ff8da2;
-            border-color: #ff8da2;
-            transition: 0.3s;
-        }
+.btn-outline-pink {
+  color: #ff8da2;
+  border-color: #ff8da2;
+  transition: 0.3s;
+}
 
-        .btn-outline-pink:hover {
-            background-color: #ff8da2;
-            color: white;
-        }
+.btn-outline-pink:hover {
+  background-color: #ff8da2;
+  color: white;
+}
