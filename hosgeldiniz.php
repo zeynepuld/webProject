@@ -27,7 +27,6 @@ $username = strstr($email, '@', true); // @ işaretine kadar olan kısmı alır 
     <div class="container">
         <h1>Hoşgeldiniz, <span><?php echo htmlspecialchars($username); ?></span>!</h1>
         <p>Başarıyla giriş yaptınız.</p>
-        <a href="logout.php">Çıkış Yap</a>
     </div>
 </body>
 </html>
