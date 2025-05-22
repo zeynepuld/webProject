@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirasımız</title>
+
+    <link rel="stylesheet" href="proje css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/59468ef0ae.js" crossorigin="anonymous"></script>
+
+    <!-- bootstrap eklenti -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- kapatma butonu çalışması için -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Zeynep Uludağ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Hakkında</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ozgecmis.html">Öz geçmiş</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sehrim.html">Şehrim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ilgialanlarim.html">İlgi Alanlarım</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="giris.php">Giriş</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- kitap öner divi -->
+    <div class="container text-center mt-5">
+        <h3><i class="fa-solid fa-book" id="kitap-ikonu"></i> Kitap Önerisi </h3>
+        <p style="font-size: 120%;">Sevdiğiniz bir kitap türü giriniz.</p>
+        <input type="text" id="tur" placeholder="Örneğin: roman, şiir, hikaye, tarih..."
+            class="form-control w-50 mx-auto mt-3">
+        <button onclick="kitapGetir()" class="btn btn-pink mt-4">Kitap Öner</button>
+
+        <div id="kitap-card" class="card mt-4 mx-auto shadow" style="width: 22rem; display: none;">
+            <img id="kitap-kapak" class="card-img-top" alt="Kitap kapağı bulunamadı">
+            <div class="card-body">
+                <h5 class="card-title" id="kitap-adi"></h5>
+                <p class="card-text" id="kitap-yazari"></p>
+                <a id="kitap-link" target="_blank" class="btn btn-outline-pink">Kitabı Görüntüle</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- javascript kodu -->
+    <script>
+        async function kitapGetir() { // kullanıcı butona tıkladığında bu fonksiyon çalışacak
+            const tur = document.getElementById("tur").value.trim();
+            if (!tur) { // kullanıcı veri girmezse site uyarı verir.
+                alert("Lütfen bir tür girin. (Örneğin: roman, şiir, hikaye, tarih...)");
+                return;
+            }
+
+            const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${tur}&langRestrict=tr&maxResults=10`); // Google Books API’sine istek gönderiliyor
+            const data = await response.json(); // cevap JSON formatına çevriliyor. (okunabillir hale getiriliyor) // oluşan veriyi data değişkeninde saklıyor.
+
+            const kitaplar = data.items;
+            const kitap = kitaplar[Math.floor(Math.random() * kitaplar.length)]; // listeden random bir eleman seçilmesini sağladım. yani her seferinde farklı bir kitap gösterilecek kullanıcıya.
+
+
+            if (kitap) {
+                document.getElementById("kitap-adi").textContent = kitap.volumeInfo.title || "Başlık yok"; // Sayfada idsi kitap-adi olan yere kitabın adını yazar. Eğer kitap adı yoksa, belirtilen yerde "Başlık yok" yazısı gösterilir.
+                document.getElementById("kitap-yazari").textContent = kitap.volumeInfo.authors || "Anonim yazar"; // Eğer yazar bilgisi yoksa Anonim yazar yazısı gösterilir.
+
+                const kapak = kitap.volumeInfo.imageLinks?.thumbnail; // eğer belirtilen sitede kitabın kapak resmi yoksa kapak değişkeni undefined olur.
+                if (kapak) {
+                    document.getElementById("kitap-kapak").src = kapak; // eğer kapak varsa onu gösteriyor
+                }
+                else {
+                    document.getElementById("kitap-kapak").src = "https://via.placeholder.com/150x220?text=Kapak+Yok"; // eğer kapak yoksa onun yerine Kapak Yok yazan bi placeholder resim gösterir.
+                }
+
+                document.getElementById("kitap-link").href = kitap.volumeInfo.infoLink || "#"; // Kitabı Görüntüle'ye basıldığında Google Books sayfası açılır kitap hakkında bilgiler gösterilir. // link yoksa boş olmasın diye # koydum
+                document.getElementById("kitap-card").style.display = "block";
+            }
+            else {
+                document.getElementById("kitap-adi").textContent = "Kitap bulunamadı";
+                document.getElementById("kitap-yazari").textContent = "Yazar bulunamadı";
+                document.getElementById("kitap-kapak").src = "https://via.placeholder.com/150x220?text=Yok";
+                document.getElementById("kitap-link").href = "#";
+                document.getElementById("kitap-card").style.display = "block";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

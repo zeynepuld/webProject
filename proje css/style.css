@@ -236,3 +236,37 @@
 }
 
 /* hakkımda hobiler kısmı bitti */
+
+
+/* İlgi Alanlarım kısmı için css kodları */
+
+
+#kitap-ikonu {
+  color: #ff8da2;
+}
+#kitap-ikonu:hover {
+  color: #d96b87;
+}
+
+
+.btn-pink {
+            background-color: #ff8da2;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn-pink:hover {
+            background-color: #d96b87;
+            color: white;
+        }
+
+        .btn-outline-pink {
+            color: #ff8da2;
+            border-color: #ff8da2;
+            transition: 0.3s;
+        }
+
+        .btn-outline-pink:hover {
+            background-color: #ff8da2;
+            color: white;
+        }
