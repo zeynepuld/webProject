@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ':password' => $hashedPassword
         ]);
 
-        echo "Kayıt başarılı! <a href='login.html'>Giriş yapmak için tıklayın.</a>";
+        echo "Kayıt başarılı! <a href='login.html'>Giriş yap.</a>";
 
     } catch (PDOException $e) {
         die("Kayıt sırasında hata oluştu: " . $e->getMessage());
