@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anasayfa</title>
+    <title>İletişim</title>
 
-    <link rel="stylesheet" href="proje css/style.css">
+    <link rel="stylesheet" href="proje css/iletisimstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <script src="https://kit.fontawesome.com/59468ef0ae.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <!-- bootstrap eklenti -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,40 +20,110 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Zeynep Uludağ</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Hakkında</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ozgecmis.html">Öz geçmiş</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sehrim.html">Şehrim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Giriş</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="iletisim.html">İletişim</a>
-                    </li>
-                </ul>
+
+
+    <div id="app" class="container">
+        <div class="content">
+            <div class="left-side">
+                <div class="address details">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="topic">Adres</div>
+                    <div class="text">Kocaeli</div>
+                    <div class="text">Türkiye</div>
+                </div>
+                <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Telefon</div>
+                    <div class="text">+90 539 830 63 07</div>
+                </div>
+                <div class="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Mail</div>
+                    <div class="text">zeyulu41@gmail.com</div>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="topic-text">Bana Mesaj Gönder</div>
+                <p>Aşağıdaki formu doldurarak benimle iletişime geçin.</p>
+
+                <form action="iletisim.php" method="POST" @submit.prevent="submitForm">
+                    <div class="input-box">
+                        <input type="text" name="ad" v-model="form.ad" placeholder="Adınız">
+                        <div v-if="errors.ad" class="error">Ad boş bırakılamaz.</div>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" name="email" v-model="form.email" placeholder="E-Mail">
+                        <div v-if="errors.email" class="error">Geçerli bir e-posta girin.</div>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" name="telefon" v-model="form.telefon" placeholder="Telefon (sadece rakam)">
+                        <div v-if="errors.telefon" class="error">Telefon sadece rakamlardan oluşmalıdır.</div>
+                    </div>
+
+                    <div class="input-box message-box">
+                        <textarea name="mesaj" v-model="form.mesaj" rows="5" placeholder="Mesajınız"></textarea>
+                        <div v-if="errors.mesaj" class="error">Mesaj boş bırakılamaz.</div>
+                    </div>
+
+                    <div class="button">
+                        <input type="submit" value="Gönder">
+                        <input type="button" @click="resetForm" value="Temizle">
+                    </div>
+                </form>
             </div>
         </div>
-    </nav>
+    </div>
+    </div>
 
-    
+    <!-- Vue.js ile doğrulama -->
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                form: {
+                    ad: "",
+                    email: "",
+                    telefon: "",
+                    mesaj: ""
+                },
+                errors: {}
+            },
+            methods: {
+                isEmailValid(email) {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                },
+                isPhoneValid(phone) {
+                    return /^[0-9]+$/.test(phone);
+                },
+                submitForm() {
+                    this.errors = {};
+                    if (!this.form.ad) this.errors.ad = true;
+                    if (!this.isEmailValid(this.form.email)) this.errors.email = true;
+                    if (!this.isPhoneValid(this.form.telefon)) this.errors.telefon = true;
+                    if (!this.form.mesaj) this.errors.mesaj = true;
+
+                    if (Object.keys(this.errors).length === 0) {
+                        this.$el.querySelector("form").submit();
+                    }
+                },
+                resetForm() {
+                    this.form = { ad: "", email: "", telefon: "", mesaj: "" };
+                    this.errors = {};
+                }
+            }
+        });
+    </script>
+
+
 
 </body>
+
+
+
+
 
 </html>
