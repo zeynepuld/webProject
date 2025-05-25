@@ -3,6 +3,8 @@
 }
 
 
+
+
 .custom-header {
   background-color: #fdf0f5;
   font-family: cursive;
@@ -36,6 +38,9 @@
 }
 
 
+
+
+
 .my-pink-btn {
   background-color: #e91e63 !important;
   color: white !important;
@@ -48,17 +53,7 @@
   color: white !important;
 }
 
-.hakkimdaClass {
-  background-color: mistyrose;
-  padding: 4%;
-  color: #780e3c;
-  font-size: 105%;
-  box-shadow: 0 4px 12px rgba(177, 175, 176, 0.3);
-  border: 3px solid #53032e;
-  box-shadow: 0 4px 10px rgba(255, 185, 220, 0.951);
-  border-radius: 15px;
-  font-family: cursive;
-}
+
 
 .feature-box {
   background-color: #fdf0f5;
@@ -179,6 +174,44 @@
 }
 
 
+.arka-plan {
+  position: relative;
+  background-image: url("https://i.pinimg.com/736x/a4/b9/b0/a4b9b0b983ab6c435d1368cf63d8aba0.jpg"); /* senin dosya yolunla değiştir */
+  background-size: cover;
+  background-position: center;
+  height: 270px;
+  color: white;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* siyah yarı saydam katman */
+  z-index: 1;
+}
+
+.icerik {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  padding: 4%;
+  color: #ffffff;
+  font-size: 105%;
+  box-shadow: 0 4px 12px rgba(177, 175, 176, 0.3);
+  box-shadow: 0 6px 12px rgba(255, 185, 220, 0.951);
+  border-radius: 15px;
+  font-family: cursive;
+}
+
+.icerik h3 {
+  color: rgba(255, 191, 223, 0.951);
+  text-align: center;
+  font-size: 220%;
+}
+
+
 
 
 #kisiselCard {
@@ -278,3 +311,23 @@
   color: #53032e;
   font-family: cursive;
 }
+
+
+#hobi-ikonu {
+    color:#ff8da2 ;
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+#gonullu-ikon {
+    color: #e91e63;
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+#spor-ikon {
+    color: #8e0055;
+    font-size: 2rem;
+    margin-right: 8px;
+}
+
