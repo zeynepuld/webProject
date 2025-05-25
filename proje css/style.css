@@ -175,8 +175,9 @@
 .card-img-top {
   object-fit: cover;
   width: 200px;
-  height: 400px;
+  height: 600px;
 }
+
 
 
 
@@ -272,3 +273,8 @@
   color: white;
 }
 
+
+.hedeflerimClass {
+  color: #53032e;
+  font-family: cursive;
+}
