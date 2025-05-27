@@ -10,8 +10,8 @@ try {
         password TEXT NOT NULL
     )");
 
-    echo "✅ Veritabanı ve tablo başarıyla oluşturuldu.";
+    echo "Veritabanı ve tablo başarıyla oluşturuldu.";
 } catch (PDOException $e) {
-    echo "❌ Hata: " . $e->getMessage();
+    echo " Hata: " . $e->getMessage();
 }
 ?>

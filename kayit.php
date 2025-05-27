@@ -16,7 +16,7 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // şifreyi hash'l
 
 try {
 
-    $db = new PDO('sqlite:login.db'); // SQLite veritabanına bağlan
+    $db = new PDO('sqlite:login.db'); // SQLite veritabanına bağlanma
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // tablo yoksa oluşturur (bir kere calıscak)
